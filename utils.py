@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-folders = ['original', 'scanned', 'compressed', 'enhanced']
+folders = ['original', 'scanned', 'enhanced', 'compressed']
 
 def compare_img(img_name):
 

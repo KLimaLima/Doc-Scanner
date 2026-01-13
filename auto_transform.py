@@ -15,7 +15,7 @@ def biggest_contour(contours):
                 max_area = area
     return biggest
 
-def warping(img):
+def warping(img, show=False):
 
     # img = cv2.imread(img_name)
     
@@ -68,12 +68,11 @@ def warping(img):
     gray = np.stack((gray,) * 3, axis=-1)
     edged = np.stack((edged,) * 3, axis=-1)
 
-    # img_hor = np.hstack((img_original, gray, edged, img))
-    # cv2.imshow("Contour detection", img_hor)
-    # cv2.imshow("Warped perspective", img_output)
+    if show:
+        img_hor = np.hstack((img_original, gray, edged, img))
+        cv2.imshow("Contour detection", img_hor)
+        cv2.imshow("Warped perspective", img_output)
 
-    # # cv2.imwrite('output/document.jpg', img_output)
-
-    # cv2.waitKey(0)
+        cv2.waitKey(0)
 
     return img_output

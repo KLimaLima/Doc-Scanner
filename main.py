@@ -23,7 +23,7 @@ cv2.imwrite(f'scanned/{img_name}', img_scanned)
 # img_enhance = enhance.enhance(img_sharpen)
 # cv2.imwrite(f'enhanced/{img_name}', img_enhance)
 
-# removed noise
+# removed noise lesgooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 img_sharpen = enhance.sharpen(img_scanned)
 
 img_blur = enhance.gaus_blur(img_sharpen)

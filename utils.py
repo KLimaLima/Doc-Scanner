@@ -1,5 +1,8 @@
 import cv2
+import numpy as np
 import os
+
+folders = ['original', 'scanned', 'compressed']
 
 def compare_img(img1, img2):
 
@@ -13,9 +16,29 @@ def compare_img(img1, img2):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
+def compare_img_sidebyside(img_name):
+
+    list_img = []
+    n = len(folders)
+
+    for folder in folders:
+
+        img = cv2.imread(f"{folder}/{img_name}")
+        list_img.append(img)
+
+        try:
+            all_img = np.hstack((all_img, img))
+        except:
+            all_img = img
+
+    cv2.imshow("Image comparison", all_img)
+    cv2.waitKey(0)
+    
+    # img_hor = np.hstack((list_img[n-3], list_img[n-2], list_img[n-1]))
+
 def compare_file_size(file_path):
 
-    folders = ['original', 'scanned', 'compressed']
+    # folders = ['original', 'scanned', 'compressed']
 
     for folder in folders:
         

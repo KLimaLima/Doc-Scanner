@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 
-
 def biggest_contour(contours):
     biggest = np.array([])
     max_area = 0
@@ -17,12 +16,9 @@ def biggest_contour(contours):
 
 def warping(img, show=False):
 
-    # img = cv2.imread(img_name)
-    
     img_original = img.copy()
 
     # Image modification
-    # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     gray = cv2.bilateralFilter(img, 20, 30, 30)
     edged = cv2.Canny(gray, 10, 20)
 

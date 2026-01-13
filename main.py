@@ -6,7 +6,7 @@ import compression
 import utils
 
 ########### INPUT IMAGE ##############
-img_name = 'test5.jpeg'
+img_name = 'test.jpeg'
 img_path = f'original/{img_name}'
 
 img = cv2.imread(img_path)
@@ -17,7 +17,9 @@ img_scanned = auto_transform.warping(img)
 cv2.imwrite(f'scanned/{img_name}', img_scanned)
 
 ########### ENCHANCE IMAGE ##############
-img_enhance = enhance.enhance(img_scanned)
+img_sharpen = enhance.sharpen(img_scanned)
+
+img_enhance = enhance.enhance(img_sharpen)
 cv2.imwrite(f'enhanced/{img_name}', img_enhance)
 
 ########### COMPRESS IMAGE ##############

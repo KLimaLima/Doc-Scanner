@@ -15,7 +15,7 @@ def use_cv2(img, quality=90):
 
 def use_pil(img_name, quality= 20):
 
-    input_img = f"scanned/{img_name}"
+    input_img = f"enhanced/{img_name}"
     output_img = f"compressed/{img_name}"
 
     # Open the image

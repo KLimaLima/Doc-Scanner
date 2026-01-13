@@ -50,8 +50,8 @@ def warping(img, show=False):
 
     # Output image size
     max_width = max(int(bottom_width), int(top_width))
-    # max_height = max(int(right_height), int(left_height))
-    max_height = int(max_width * 1.414)  # for A4
+    max_height = max(int(right_height), int(left_height))
+    # max_height = int(max_width * 1.414)  # A4
 
     # Desired points values in the output image
     converted_points = np.float32([[0, 0], [max_width, 0], [0, max_height], [max_width, max_height]])

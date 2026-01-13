@@ -6,39 +6,31 @@ folders = ['original', 'scanned', 'compressed']
 
 def compare_img(img1, img2):
 
-    # # Example usage
-    # original_img = cv2.imread('original_image.jpg')
-    # compressed_img = compress_image('original_image.jpg', quality=50)
-
     # Display results
     cv2.imshow('Image 1', img1)
     cv2.imshow('Image 2', img2)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
+# display image side by side
 def compare_img_sidebyside(img_name):
 
-    list_img = []
-    n = len(folders)
-
+    # get all image in each folder
     for folder in folders:
 
         img = cv2.imread(f"{folder}/{img_name}")
-        list_img.append(img)
 
+        # if first time will go except, then just repeat
         try:
+            # stack image side by side
             all_img = np.hstack((all_img, img))
         except:
             all_img = img
 
     cv2.imshow("Image comparison", all_img)
     cv2.waitKey(0)
-    
-    # img_hor = np.hstack((list_img[n-3], list_img[n-2], list_img[n-1]))
 
 def compare_file_size(file_path):
-
-    # folders = ['original', 'scanned', 'compressed']
 
     for folder in folders:
         

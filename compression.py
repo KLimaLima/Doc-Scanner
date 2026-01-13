@@ -8,6 +8,6 @@ def compress_image(img, quality=90):
     _, encoded_img = cv2.imencode('.jpg', img, encode_param)
         
     # Decode the compressed image
-    decoded_img = cv2.imdecode(encoded_img, cv2.IMREAD_COLOR)
+    decoded_img = cv2.imdecode(encoded_img, cv2.IMREAD_GRAYSCALE)
         
     return decoded_img

@@ -3,7 +3,7 @@ import cv2
 import auto_transform
 import enhance
 
-img_path = 'test.jpeg'
+img_path = 'dark.jpeg'
 
 img = cv2.imread(img_path)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

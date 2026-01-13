@@ -21,3 +21,9 @@ def sharpen(img):
     cv2.imwrite('sharpened_image.jpg', sharpened_image)
 
     return sharpened_image
+
+def gaus_blur(img):
+
+    blurred_img = cv2.GaussianBlur(img, (3,3), 0)
+
+    return blurred_img

@@ -2,33 +2,35 @@ import cv2
 import numpy as np
 import os
 
-folders = ['original', 'scanned', 'compressed']
+folders = ['original', 'scanned', 'compressed', 'enhanced']
 
-def compare_img(img1, img2):
+def compare_img(img_name):
 
-    # Display results
-    cv2.imshow('Image 1', img1)
-    cv2.imshow('Image 2', img2)
+    for folder in folders:
+
+        img  = cv2.imread(f"{folder}/{img_name}")
+        cv2.imshow(folder, img)
+
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
+    # Display results
+    # cv2.imshow('Image 1', img1)
+    # cv2.imshow('Image 2', img2)
+
 # display image side by side
-def compare_img_sidebyside(img_name):
+# def compare_img_sidebyside(img_name):
 
-    # get all image in each folder
-    for folder in folders:
+#     # get all image in each folder
 
-        img = cv2.imread(f"{folder}/{img_name}")
+#     img1 = cv2.imread(f"{folders[0]}/{img_name}")
+#     img2 = cv2.imread(f"{folders[1]}/{img_name}")
+#     img3 = cv2.imread(f"{folders[2]}/{img_name}")
 
-        # if first time will go except, then just repeat
-        try:
-            # stack image side by side
-            all_img = np.hstack((all_img, img))
-        except:
-            all_img = img
+#     all_img = np.hstack((img1, img2, img3))
 
-    cv2.imshow("Image comparison", all_img)
-    cv2.waitKey(0)
+#     cv2.imshow("Image comparison", all_img)
+#     cv2.waitKey(0)
 
 def compare_file_size(file_path):
 

@@ -22,6 +22,7 @@ cv2.imwrite(f'scanned/{img_name}', img_scanned)
 
 ########### COMPRESS IMAGE ##############
 compression.use_pil(img_name)
+# compression.use_pil(img_name, 5)
 
 ########### ANALYSIS ##############
 utils.compare_file_size(img_name)

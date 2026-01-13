@@ -20,7 +20,7 @@ def use_pil(img_name, quality= 20):
 
     # Open the image
     with Image.open(input_img) as comp_img:
-        # Compress and saving the image
+        # Compress and save the image
         comp_img.save(output_img, "JPEG", quality=quality)
 
     print(f"Image compressed successfully")
